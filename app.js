@@ -37,7 +37,6 @@ app.get('/', (req, res)=>{
 
 app.get("/", (req, res) => res.send());
 
-const PORT = 3000;
 
 
 app.use(express.static('public'))
@@ -100,6 +99,10 @@ app.get('/posts/:id', (req, res) => {
   }
   // ... Otherwise, send the regular post detail HTML
 )
+
+
+const { PORT = 1337 } = process.env;
+
 app.listen(PORT, () => {
   console.log(`App listening in port ${PORT}`);
 });
